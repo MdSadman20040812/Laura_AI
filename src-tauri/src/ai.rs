@@ -56,7 +56,7 @@ impl CerebrasClient {
         );
 
         let request_payload = ChatCompletionRequest {
-            model: "llama-3.3-70b".to_string(),
+            model: "zai-glm-4.7".to_string(),
             messages: vec![
                 ChatMessage {
                     role: "system".to_string(),
@@ -99,7 +99,7 @@ impl CerebrasClient {
         );
 
         let request_payload = ChatCompletionRequest {
-            model: "llama-3.3-70b".to_string(),
+            model: "zai-glm-4.7".to_string(),
             messages: vec![
                 ChatMessage {
                     role: "system".to_string(),

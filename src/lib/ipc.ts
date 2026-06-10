@@ -145,7 +145,7 @@ export async function invokeCmd(cmd: string, args?: any): Promise<any> {
       const interval = setInterval(() => {
         const status = statuses[step];
         const progress = (step + 1) / statuses.length;
-        const messages = {
+        const messages: Record<string, string> = {
           queued: "In FIFO worker queue...",
           demuxing: "Extracting audio track (16kHz PCM wav)...",
           proxy_gen: "Generating 1080p proxy using hardware acceleration...",
@@ -153,7 +153,8 @@ export async function invokeCmd(cmd: string, args?: any): Promise<any> {
           beat_map: "Analyzing audio beat drops and rhythmic spikes...",
           scene_cut: "Mapping visual scene transitions...",
           embedding: "Generating scene embeddings and storing in local DB...",
-          completed: "Ingestion process completed successfully."
+          completed: "Ingestion process completed successfully.",
+          failed: "Ingestion process failed."
         };
 
         triggerMockEvent("ingest-progress", {

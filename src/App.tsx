@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTimelineStore } from "./store/timeline";
 import { Player } from "./components/Player";
 import { Timeline } from "./components/Timeline";
@@ -8,7 +8,6 @@ import {
   Film, 
   Cpu, 
   Layers, 
-  Sparkles, 
   Plus, 
   CheckCircle, 
   Loader2 
@@ -22,7 +21,6 @@ function App() {
     ingestJobs, 
     selectedAsset, 
     setSelectedAsset,
-    timeline,
     initEventListener 
   } = useTimelineStore();
 
@@ -201,9 +199,9 @@ function App() {
                       </div>
                     </div>
 
-                    {asset.transcript && asset.transcript.length > 0 && (
-                      <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 ml-2" title="Speech & beats extracted" />
-                    )}
+                    <span title="Speech & beats extracted">
+                      <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />
+                    </span>
                   </div>
                 );
               })}
